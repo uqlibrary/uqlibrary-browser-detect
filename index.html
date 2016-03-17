@@ -3,10 +3,15 @@
 
 <script type="text/javascript" src="uqlibrary-browser-supported.js"></script>
 
+Your browser is <span id="supported"></span>
+
 <script type="text/javascript">
   (function () {
-    var a = browserSupported();
-    console.log(a);
+    if (browserSupported()) {
+      document.querySelector('#supported').textContent = 'supported';
+    } else {
+      document.querySelector('#supported').textContent = 'not supported';
+    }
   })();
 </script>
 
