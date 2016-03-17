@@ -1,0 +1,19 @@
+{
+  "name": "uqlibrary-browser-supported",
+  "homepage": "https://github.com/uqlibrary/uqlibrary-browser-supported",
+  "authors": [
+    "Jan-Willem Wisgerhof <jwwisgerhof@gmail.com>"
+  ],
+  "description": "Browser detection tool used in UQ Library projects",
+  "main": "uqlibrary-browser-supported.js",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
