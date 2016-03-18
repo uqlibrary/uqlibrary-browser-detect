@@ -32,6 +32,12 @@
       version = 11;
     }
 
-    return (supportedBrowserVersions[browser] <= parseInt(version));
+    var data = {
+      browser: browser,
+      version: version,
+      supported: (supportedBrowserVersions[browser] <= parseInt(version))
+    };
+
+    return data;
   }
 });

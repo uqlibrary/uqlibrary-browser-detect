@@ -6,7 +6,11 @@ Library.
 ```bower install uqlibrary/uqlibrary-browser-supported```
 
 ```
-if (browserSupported()) {
-    console.log("Supported!");
+var data = browserSupported();
+console.log(data.browser); // ie, chrome, safari, edge, opera
+console.log(data.version);
+
+if (!data.supported) {
+    console.log("Your browser is not supported");
 }
 ```
