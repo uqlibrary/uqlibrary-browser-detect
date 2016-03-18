@@ -4,12 +4,12 @@
   "use strict";
 
   var supportedBrowserVersions = {
-    chrome: 48,
-    firefox: 15,
-    opera: 15,
-    safari: 7,
+    chrome: 1,
+    firefox: 1,
+    opera: 1,
+    safari: 1,
     ie: 11,
-    edge: 13
+    edge: 1
   };
 
   return function () {
