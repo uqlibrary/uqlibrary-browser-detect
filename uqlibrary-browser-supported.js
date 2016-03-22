@@ -4,9 +4,9 @@
   "use strict";
 
   var supportedBrowserVersions = {
-    chrome: 40,
-    firefox: 42,
-    opera: 35,
+    chrome: 35,
+    firefox: 30,
+    opera: 30,
     safari: 6,
     ie: 11,
     edge: 1
