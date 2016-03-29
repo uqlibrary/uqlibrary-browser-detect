@@ -8,7 +8,7 @@
     firefox: 30,
     opera: 30,
     safari: 6,
-    ie: 11,
+    ie: 10,
     edge: 1
   };
 
