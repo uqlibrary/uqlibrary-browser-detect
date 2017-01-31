@@ -1,5 +1,8 @@
 # uqlibrary-browser-supported
 
+[![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-browser-supported.svg)](https://david-dm.org/uqlibrary/uqlibrary-browser-supported)
+[![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-browser-supported/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-browser-supported?type=dev)
+
 Javascript/html snippets that provide a function to check whether the user's browser is currently supported by the UQ Library.
 
 ```bower install uqlibrary/uqlibrary-browser-supported```
