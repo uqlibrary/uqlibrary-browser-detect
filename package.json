@@ -1,10 +1,22 @@
 {
   "name": "uqlibrary-browser-supported",
   "version": "0.0.1",
+  "description": "",
   "main": "",
+  "module": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uqlibrary/uqlibrary-browser-supported"
+  },
+  "keywords": [
+    "js",
+    "noscript",
+    "browser check"
+  ],
+  "author": "UQ Library",
   "license": "MIT",
-  "engines": {
-    "npm": ">=3",
-    "node": "^6.2.2"
-  }
+  "homepage": "https://github.com/uqlibrary/uqlibrary-browser-supported",
+  "files": [
+    "README.md"
+  ]
 }
