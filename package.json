@@ -1,0 +1,10 @@
+{
+  "name": "uqlibrary-browser-supported",
+  "version": "0.0.1",
+  "main": "",
+  "license": "MIT",
+  "engines": {
+    "npm": ">=3",
+    "node": "^6.2.2"
+  }
+}
