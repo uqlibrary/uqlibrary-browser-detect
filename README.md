@@ -5,7 +5,9 @@
 
 Javascript/html snippets that provide a function to check whether the user's browser is currently supported by the UQ Library.
 
-```bower install uqlibrary/uqlibrary-browser-supported```
+```sh
+bower install uqlibrary/uqlibrary-browser-supported
+```
 
 ## preloader.html
 
@@ -15,32 +17,30 @@ To automatically inject this html snippet:
 
 1. Insert into html page, eg index.html
 
-```
+```html
 <!-- Preloader/Unsupported browser message -->
 <!-- preloader will be inserted by gulp task, do not remove -->
 #preloader#
 <!-- End of Preloader/Unsupported browser message -->
-```    
-
-2. Add this gulp task to your build procedure
-
 ```
+
+1. Add this gulp task to your build procedure
+
+```javascript
 // inject preloader.html code into html pages
 gulp.task('inject-preloader', function() {
-
-  var regEx = new RegExp("#preloader#", "g");
-  var browserUpdate=fs.readFileSync("app/bower_components/uqlibrary-browser-supported/preloader.html", "utf8");
-
-  return gulp.src(dist('*'))
-      .pipe(replace({patterns: [{ match: regEx, replacement: browserUpdate}], usePrefix: false}))
-      .pipe(gulp.dest(dist()))
-      .pipe($.size({title: 'inject-preloader'}));
+var regEx = new RegExp("#preloader#", "g");
+var browserUpdate=fs.readFileSync("app/bower_components/uqlibrary-browser-supported/preloader.html", "utf8");
+return gulp.src(dist('*'))
+    .pipe(replace({patterns: [{ match: regEx, replacement: browserUpdate}], usePrefix: false}))
+    .pipe(gulp.dest(dist()))
+    .pipe($.size({title: 'inject-preloader'}));
 });
 ```
 
-3. Insert following javascript snippet to hide/show preloader/unsupported message
+1. Insert following javascript snippet to hide/show preloader/unsupported message
 
-```
+```javascript
 var browserData = browserSupported();
 console.log(browserData.browser); // ie, chrome, safari, edge, opera
 console.log(browserData.version);
@@ -54,16 +54,18 @@ if (!browserData.supported) {
   }
 }
 
- window.addEventListener('WebComponentsReady', function(e) {
+window.addEventListener('WebComponentsReady', function(e) {
 
   //only display unsupported big message if web components can't be loaded
-  if (document.getElementById('preloader-unsupported'))
+  if (document.getElementById('preloader-unsupported')) {
     document.getElementById('preloader-unsupported').style.display = 'none';
+  }
 
   //hide loading screen once web components have been loaded
-  if (document.querySelector('#preloader-loading'))
+  if (document.querySelector('#preloader-loading')) {
     document.querySelector('#preloader-loading').style.display = 'none';
-    
+  }
+
 });
 
 ```
@@ -77,16 +79,15 @@ To automatically inject this js snippet:
 1. Insert //bower_components/uqlibrary-browser-supported/browser-update.js where this js needs to be inserted
 2. Add this gulp task to your build procedure
 
-```
+```javascript
 gulp.task('inject-browser-update', function() {
 
 var regEx = new RegExp("//bower_components/uqlibrary-browser-supported/browser-update.js", "g");
 var browserUpdate=fs.readFileSync("bower_components/uqlibrary-browser-supported/browser-update.js", "utf8");
 
 return gulp.src(<SOURCE>)
-    .pipe(replace({patterns: [{ match: regEx, replacement: browserUpdate}], usePrefix: false}))
-    .pipe(gulp.dest(<DESTINATION>))
-    .pipe($.size({title: 'inject-browser-update'}));
+  .pipe(replace({patterns: [{ match: regEx, replacement: browserUpdate}], usePrefix: false}))
+  .pipe(gulp.dest(<DESTINATION>))
+  .pipe($.size({title: 'inject-browser-update'}));
 });
 ```
-
